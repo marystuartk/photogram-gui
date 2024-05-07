@@ -35,10 +35,17 @@ matching_photos = Photo.all
   a_new_photo.caption = input_caption
   a_new_photo.owner_id = input_owner_id
 
-
   a_new_photo.save
 
-    render({ :template => "photo_templates/create" })
+  # render({ :template => "photo_templates/create" })
+
+  redirect_to("/photos/" + a_new_photo.id.to_s)
+
+  end
+
+  def update
+
+    render({ :template => "photo_templates/update" })
   end
 
 end
